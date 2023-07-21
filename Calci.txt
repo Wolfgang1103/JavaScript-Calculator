@@ -1,0 +1,121 @@
+<html>
+	<head>
+		<title> Calculator </title>
+		<style type="text/css">
+		.cal{width:800px;
+			height:580px;
+			background-color:#C9DFEC;
+			font-size:20px;
+			margin:auto;
+			margin-top:30px;
+			border:2px grey solid;
+			text-align:center;
+			padding:40px;
+		}
+		</style>
+	</head>
+<body>
+	<div style="text-align:center; font-size:40px; padding-top:10px;"> <h1> Calculator </h1> </div>
+		<div class="cal">
+		Ans: <input type="text" name="" id="ans" readonly="" style="margin-left:5px; width:560px; height:50px; font-size:30px;"/>
+		<br/>
+		<br/>
+		<input type="Number" name="first" id="first" step="any" style="margin-right:20px; width:150px; height:30px; font-size:15px;"/>
+		<select id="op" style="margin-right:20px; width:100px; height:30px; box-shadow:-3px 2px 2px 3px grey;">
+			<option value="+"> + </option>
+			<option value="-"> - </option>
+			<option value="*"> X </option>
+			<option value="/"> / </option>
+		</select>
+		<input type="Number" name="second" id="second" step="any" style="margin-right:20px; width:150px; height:30px; font-size:15px;"/>
+		</br>
+		</br>
+		<button onclick="calc()" style="width:100px; height:30px; font-weight:bold; background-color:#F5DEB3; box-shadow:-3px 2px 2px 3px grey;"> Calculate </button>
+		<br/>
+		<br/>
+		To get Square Root or cube root or ln(value), enter value here: <input type="Number" id="third" step="any" style="margin-left:6px; width:150px; height:30px; font-			size:15px;"/>
+		<br/>
+		<br/>
+		<button onclick="getsqrt()" style="margin-right:10px; width:100px; height:40px; font-weight:bold; background-color:#F5DEB3; box-shadow:-3px 2px 2px 3px grey;"> Calculate Sq 		root </button>
+		<button onclick="getln()" style="margin-right:10px; width:100px; height:40px; font-weight:bold; background-color:#F5DEB3; box-shadow:-3px 2px 2px 3px grey;"> Calculate 		ln(value) </button>
+		<button onclick="getcbrt()" style="margin-right:10px; width:100px; height:40px; font-weight:bold; background-color:#F5DEB3; box-shadow:-3px 2px 2px 3px grey;"> Calculate 		cube root </button>
+		<br/>
+		<br/>
+		For exponential calculations:
+		<br/>
+		<br/>
+		Enter number: <input type="Number" id="fourth" step="any" style="margin-left:5px; margin-right:10px; width:150px; height:30px; font-size:15px;"/>
+		Enter power: <input type="Number" id="fifth" step="any" style="margin-left:5px; margin-right:10px; width:150px; height:30px; font-size:15px;"/>
+		<br/>
+		<br/>
+		<button onclick="getpow()" style="width:100px; height:40px; font-weight:bold; background-color:#F5DEB3; box-shadow:-3px 2px 2px 3px grey;"> Calculate Value </button>
+		<br/>
+		<br/>
+		For Trigonometric Values:
+		<br/>
+		<br/>
+		Enter value(in radians): <input type="Number" id="sixth" step="any" style="margin-left:5px; margin-right:10px; width:150px; height:30px; font-size:15px;"/>
+		<br/>
+		<br/>
+		<button onclick="getsin()" style="margin-right:10px; width:100px; height:40px; font-weight:bold; background-color:#F5DEB3; box-shadow:-3px 2px 2px 3px grey;"> Calculate 		sin(value) </button>
+		<button onclick="getcos()" style="margin-right:10px; width:100px; height:40px; font-weight:bold; background-color:#F5DEB3; box-shadow:-3px 2px 2px 3px grey;"> Calculate 		cos(value) </button>
+		<button onclick="gettan()" style="margin-right:10px; width:100px; height:40px; font-weight:bold; background-color:#F5DEB3; box-shadow:-3px 2px 2px 3px grey;"> Calculate 		tan(value) </button>
+	</div>
+</body>
+	<script type="text/javascript">
+		function calc(){
+			var x = document.getElementById('first').value;
+			var y = document.getElementById('second').value;
+			var z = document.getElementById('op').value;
+		if(z=='+'){
+			var ans= parseInt(x) + parseInt(y);
+		}
+		if(z=='-'){
+			var ans= parseInt(x) - parseInt(y);
+		}
+		if(z=='*'){
+			var ans= parseInt(x) * parseInt(y);
+		}
+		if(z=='/'){
+			var ans= parseInt(x) / parseInt(y);
+		}
+			document.getElementById('ans').value=ans;
+	}
+	function getsqrt(){
+		var naam=document.getElementById('third').value;
+		var sqrt = Math.sqrt(naam);
+		document.getElementById('ans').value=sqrt;
+	}
+	function getpow(){
+		var naam1=document.getElementById('fourth').value;
+		var naam2=document.getElementById('fifth').value;
+		var sqrt = Math.pow(naam1,naam2);
+		document.getElementById('ans').value=sqrt;
+	}
+	function getln(){
+		var naam=document.getElementById('third').value;
+		var sqrt = Math.log(naam);
+		document.getElementById('ans').value=sqrt;
+	}
+	function getcbrt(){
+		var naam=document.getElementById('third').value;
+		var sqrt = Math.cbrt(naam);
+		document.getElementById('ans').value=sqrt;
+	}
+	function getsin(){
+		var naam=document.getElementById('sixth').value;
+		var sqrt = Math.sin(naam);
+		document.getElementById('ans').value=sqrt;
+	}
+	function getcos(){
+		var naam=document.getElementById('sixth').value;
+		var sqrt = Math.cos(naam);
+		document.getElementById('ans').value=sqrt;
+	}
+	function gettan(){
+		var naam=document.getElementById('sixth').value;
+		var sqrt = Math.tan(naam);
+		document.getElementById('ans').value=sqrt;
+	}
+	</script>
+</html>
